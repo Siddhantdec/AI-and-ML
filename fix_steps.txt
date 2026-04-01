@@ -1,0 +1,43 @@
+====================================================
+  FIX: OSError WinError 1114 - PyTorch DLL Error
+====================================================
+
+STEP 1 — Activate your virtual environment first
+--------------------------------------------------
+cd C:\Users\admin\Downloads\AI_Training_Data_Bank\AI_Training_Data_Bank\m3
+aenv\Scripts\activate
+
+(You should see "(aenv)" appear at the start of your terminal line)
+
+
+STEP 2 — Uninstall existing PyTorch
+--------------------------------------------------
+pip uninstall torch torchvision torchaudio -y
+
+
+STEP 3 — Reinstall PyTorch (CPU version)
+--------------------------------------------------
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+
+STEP 4 — Reinstall sentence-transformers
+--------------------------------------------------
+pip install sentence-transformers
+
+
+STEP 5 — Restart the Streamlit app
+--------------------------------------------------
+streamlit run rag_sql_app.py
+
+
+====================================================
+  TROUBLESHOOTING (if still not working)
+====================================================
+
+Check your Python version:
+    python --version
+
+Make sure it is Python 3.9, 3.10, or 3.11
+Python 3.12+ can cause this error.
+
+====================================================
